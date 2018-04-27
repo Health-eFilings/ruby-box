@@ -4,7 +4,7 @@ module RubyBox
     has_many :comments
 
     def download
-      resp = stream.read
+      stream.read
     end
 
     def download_url
@@ -24,7 +24,7 @@ module RubyBox
         "name" => name
       })
 
-      resp = @session.request(uri, request)
+      @session.request(uri, request)
     end
 
     def stream( opts={} )
@@ -78,7 +78,7 @@ module RubyBox
     def file_content_url
       "#{RubyBox::API_URL}/#{resource_name}/#{id}/content"
     end
-    
+
 
     def resource_name
       'files'

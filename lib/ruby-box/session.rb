@@ -47,13 +47,13 @@ module RubyBox
     def get(url, raw=false)
       uri = URI.parse(url)
       request = Net::HTTP::Get.new( uri.request_uri )
-      resp = request( uri, request, raw )
+      request( uri, request, raw )
     end
 
     def delete(url, raw=false)
       uri = URI.parse(url)
       request = Net::HTTP::Delete.new( uri.request_uri )
-      resp = request( uri, request, raw )
+      request( uri, request, raw )
     end
 
     def request(uri, request, raw=false, retries=0)
